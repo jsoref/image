@@ -64,7 +64,7 @@ func testGenericRecordDigestUncompressedPair(t *testing.T, cache types.BlobInfoC
 		cache.RecordDigestUncompressedPair(digestCompressedB, digestUncompressed)
 		assert.Equal(t, digestUncompressed, cache.UncompressedDigest(digestCompressedB))
 
-		// Mapping an uncompresesd digest to self
+		// Mapping an uncompressed digest to self
 		cache.RecordDigestUncompressedPair(digestUncompressed, digestUncompressed)
 		assert.Equal(t, digestUncompressed, cache.UncompressedDigest(digestUncompressed))
 	}
