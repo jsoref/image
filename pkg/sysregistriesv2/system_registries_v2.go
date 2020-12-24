@@ -30,7 +30,7 @@ const builtinRegistriesConfPath = "/etc/containers/registries.conf"
 // systemRegistriesConfDirPath is the path to the system-wide registry
 // configuration directory and is used to add/subtract potential registries for
 // obtaining images.  You can override this at build time with
-// -ldflags '-X github.com/containers/image/sysregistries.systemRegistriesConfDirecotyPath=$your_path'
+// -ldflags '-X github.com/containers/image/sysregistries.systemRegistriesConfDirectoryPath=$your_path'
 var systemRegistriesConfDirPath = builtinRegistriesConfDirPath
 
 // builtinRegistriesConfDirPath is the path to the registry configuration directory.
