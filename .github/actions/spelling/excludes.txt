@@ -1,0 +1,17 @@
+^\.github/
+ignore$
+\.bz2$
+\.cert$
+\.crt$
+\.gpg$
+\.gz$
+\.key$
+\.mod$
+\.pem$
+\.signature$
+\.signature-v3$
+\.std$
+\.sum$
+\.tar$
+\.xz$
+\.zst$
