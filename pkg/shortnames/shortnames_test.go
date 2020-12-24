@@ -348,11 +348,11 @@ func TestResolveWithVaryingShortNameModes(t *testing.T) {
 		{"testdata/no-reg.conf", types.ShortNameModeInvalid, "repo/image", true, 0},
 		{"testdata/one-reg.conf", types.ShortNameModeInvalid, "repo/image", true, 0},
 		{"testdata/two-reg.conf", types.ShortNameModeInvalid, "repo/image", true, 0},
-		// Permisive + match -> return alias
+		// Permissive + match -> return alias
 		{"testdata/no-reg.conf", types.ShortNameModePermissive, "repo/image", false, 1},
 		{"testdata/one-reg.conf", types.ShortNameModePermissive, "repo/image", false, 1},
 		{"testdata/two-reg.conf", types.ShortNameModePermissive, "repo/image", false, 1},
-		// Permisive + no match -> search (no tty)
+		// Permissive + no match -> search (no tty)
 		{"testdata/no-reg.conf", types.ShortNameModePermissive, "doesnotexist", true, 0},
 		{"testdata/one-reg.conf", types.ShortNameModePermissive, "doesnotexist", false, 1},
 		{"testdata/two-reg.conf", types.ShortNameModePermissive, "doesnotexist", false, 2},
