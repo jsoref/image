@@ -187,9 +187,9 @@ func TestPolicyContextRequirementsForImageRef(t *testing.T) {
 		{"docker", "very.deep.com/n1/n2/n3/repo:tag2", "docker", "*.deep.com"},
 		{"docker", "not.very.deep.com/n1/n2/n3/repo:tag2", "docker", "*.very.deep.com"},
 		// Default
-		{"docker", "this.doesnt/match:anything", "docker", ""},
+		{"docker", "this.does-not/match:anything", "docker", ""},
 		// No match within a matched transport which doesn't have a "" scope
-		{"atomic", "this.doesnt/match:anything", "", ""},
+		{"atomic", "this.does-not/match:anything", "", ""},
 		// No configuration available for this transport at all
 		{"dir", "what/ever", "", ""}, // "what/ever" is not a valid scope for the real "dir" transport, but we only need it to be a valid reference.Named.
 	} {
