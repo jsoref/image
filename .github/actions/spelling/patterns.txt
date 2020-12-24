@@ -1,0 +1,20 @@
+# kid:
+"kid":\s*"(?:[A-Z0-9]{4}:){11}[A-Z0-9]{4}"
+# docker.io
+"docker\.io/\S+"
+# signature
+"signature":\s*"[a-zA-Z=;,/0-9+-_]{86}"
+# protected
+"protected":\s*"[a-zA-Z=;,/0-9+-_]{80,}"
+# sha-
+\b[0-9a-fA-F]{40}\b
+\b[0-9a-fA-F]{64}\b
+
+Reference:\s+"[0-9a-f]{63}"
+# hex digits including css/html color classes:
+(?:[\\0][xX]|\\u|[uU]\+|#|\%23)[0-9a-fA-FgGrR]{2,}[uU]?[lL]{0,2}\b
+# ignore long runs of a single character:
+\b([A-Za-z])\1{3,}\b
+# <word>v#
+v\d+(?:\b|(?=[a-zA-Z]))
+
