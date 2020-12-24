@@ -143,7 +143,7 @@ type BlobInfo struct {
 }
 
 // BICTransportScope encapsulates transport-dependent representation of a “scope” where blobs are or are not present.
-// BlobInfocache.RecordKnownLocations / BlobInfocache.CandidateLocations record data aboud blobs keyed by (scope, digest).
+// BlobInfocache.RecordKnownLocations / BlobInfocache.CandidateLocations record data about blobs keyed by (scope, digest).
 // The scope will typically be similar to an ImageReference, or a superset of it within which blobs are reusable.
 //
 // NOTE: The contents of this structure may be recorded in a persistent file, possibly shared across different
