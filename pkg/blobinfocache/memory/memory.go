@@ -101,7 +101,7 @@ func (mem *cache) RecordKnownLocation(transport types.ImageTransport, scope type
 	locationScope[location] = time.Now() // Possibly overwriting an older entry.
 }
 
-// appendReplacementCandiates creates prioritize.CandidateWithTime values for (transport, scope, digest), and returns the result of appending them to candidates.
+// appendReplacementCandidates creates prioritize.CandidateWithTime values for (transport, scope, digest), and returns the result of appending them to candidates.
 func (mem *cache) appendReplacementCandidates(candidates []prioritize.CandidateWithTime, transport types.ImageTransport, scope types.BICTransportScope, digest digest.Digest) []prioritize.CandidateWithTime {
 	locations := mem.knownLocations[locationKey{transport: transport.Name(), scope: scope, blobDigest: digest}] // nil if not present
 	for l, t := range locations {
@@ -119,7 +119,7 @@ func (mem *cache) appendReplacementCandidates(candidates []prioritize.CandidateW
 // CandidateLocations returns a prioritized, limited, number of blobs and their locations that could possibly be reused
 // within the specified (transport scope) (if they still exist, which is not guaranteed).
 //
-// If !canSubstitute, the returned cadidates will match the submitted digest exactly; if canSubstitute,
+// If !canSubstitute, the returned candidates will match the submitted digest exactly; if canSubstitute,
 // data from previous RecordDigestUncompressedPair calls is used to also look up variants of the blob which have the same
 // uncompressed digest.
 func (mem *cache) CandidateLocations(transport types.ImageTransport, scope types.BICTransportScope, primaryDigest digest.Digest, canSubstitute bool) []types.BICReplacementCandidate {
