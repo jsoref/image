@@ -108,7 +108,7 @@ func successfullyUnmarshalUntrustedSignature(t *testing.T, schemaLoader gojsonsc
 	return s
 }
 
-// Verify that input can't be unmashaled as an untrusted signature, and that it fails JSON schema validation.
+// Verify that input can't be unmarshaled as an untrusted signature, and that it fails JSON schema validation.
 func assertUnmarshalUntrustedSignatureFails(t *testing.T, schemaLoader gojsonschema.JSONLoader, input []byte) {
 	inputString := string(input)
 
