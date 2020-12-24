@@ -92,7 +92,7 @@ func TestDefaultPolicy(t *testing.T) {
 	assert.Equal(t, policyFixtureContents, policy)
 
 	for _, path := range []string{
-		"/this/doesnt/exist", // Error reading file
+		"/this/does/not/exist", // Error reading file
 		"/dev/null",          // A failure case; most are tested in the individual method unit tests.
 	} {
 		policy, err := DefaultPolicy(&types.SystemContext{SignaturePolicyPath: path})
@@ -200,7 +200,7 @@ func TestNewPolicyFromFile(t *testing.T) {
 	assert.Equal(t, policyFixtureContents, policy)
 
 	// Error reading file
-	_, err = NewPolicyFromFile("/this/doesnt/exist")
+	_, err = NewPolicyFromFile("/this/does/not/exist")
 	assert.Error(t, err)
 
 	// A failure case; most are tested in the individual method unit tests.

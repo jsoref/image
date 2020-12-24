@@ -154,8 +154,8 @@ func TestReferenceNewImage(t *testing.T) {
 	ref, err := ParseReference("//busybox")
 	require.NoError(t, err)
 	img, err := ref.NewImage(context.Background(), &types.SystemContext{
-		RegistriesDirPath:        "/this/doesnt/exist",
-		DockerPerHostCertDirPath: "/this/doesnt/exist",
+		RegistriesDirPath:        "/this/does/not/exist",
+		DockerPerHostCertDirPath: "/this/does/not/exist",
 		ArchitectureChoice:       "amd64",
 		OSChoice:                 "linux",
 	})
@@ -167,7 +167,7 @@ func TestReferenceNewImageSource(t *testing.T) {
 	ref, err := ParseReference("//busybox")
 	require.NoError(t, err)
 	src, err := ref.NewImageSource(context.Background(),
-		&types.SystemContext{RegistriesDirPath: "/this/doesnt/exist", DockerPerHostCertDirPath: "/this/doesnt/exist"})
+		&types.SystemContext{RegistriesDirPath: "/this/does/not/exist", DockerPerHostCertDirPath: "/this/does/not/exist"})
 	assert.NoError(t, err)
 	defer src.Close()
 }
@@ -176,7 +176,7 @@ func TestReferenceNewImageDestination(t *testing.T) {
 	ref, err := ParseReference("//busybox")
 	require.NoError(t, err)
 	dest, err := ref.NewImageDestination(context.Background(),
-		&types.SystemContext{RegistriesDirPath: "/this/doesnt/exist", DockerPerHostCertDirPath: "/this/doesnt/exist"})
+		&types.SystemContext{RegistriesDirPath: "/this/does/not/exist", DockerPerHostCertDirPath: "/this/does/not/exist"})
 	require.NoError(t, err)
 	defer dest.Close()
 }
