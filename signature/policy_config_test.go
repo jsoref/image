@@ -274,7 +274,7 @@ func addExtraJSONMember(t *testing.T, encoded []byte, name string, extra interfa
 	return res
 }
 
-// policyJSONUnmarshallerTests formalizes the repeated structure of the JSON unmasrhaller
+// policyJSONUnmarshallerTests formalizes the repeated structure of the JSON unmarshaller
 // tests in this file, and allows sharing the test implementation.
 type policyJSONUmarshallerTests struct {
 	newDest         func() json.Unmarshaler           // Create a new json.Unmarshaler to test against
