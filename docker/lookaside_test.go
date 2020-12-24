@@ -197,7 +197,7 @@ func TestLoadAndMergeConfig(t *testing.T) {
 		Docker: map[string]registryNamespace{
 			"example.com":                    {SigStore: "https://sigstore.example.com"},
 			"registry.test.example.com":      {SigStore: "http://registry.test.example.com/sigstore"},
-			"registry.test.example.com:8888": {SigStore: "http://registry.test.example.com:8889/sigstore", SigStoreStaging: "https://registry.test.example.com:8889/sigstore/specialAPIserverWhichDoesntExist"},
+			"registry.test.example.com:8888": {SigStore: "http://registry.test.example.com:8889/sigstore", SigStoreStaging: "https://registry.test.example.com:8889/sigstore/specialAPIserverWhichDoesNotExist"},
 			"localhost":                      {SigStore: "file:///home/mitr/mydevelopment1"},
 			"localhost:8080":                 {SigStore: "file:///home/mitr/mydevelopment2"},
 			"localhost/invalid/url/test":     {SigStore: ":emptyscheme"},
