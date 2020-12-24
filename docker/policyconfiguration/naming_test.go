@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// TestDockerReference tests DockerReferenceIdentity and DockerReferenceNamespaces simulatenously
+// TestDockerReference tests DockerReferenceIdentity and DockerReferenceNamespaces simultaneously
 // to ensure they are consistent.
 func TestDockerReference(t *testing.T) {
 	sha256Digest := "@sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
