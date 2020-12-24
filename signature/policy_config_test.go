@@ -1101,7 +1101,7 @@ func TestPRMExactReferenceUnmarshalJSON(t *testing.T) {
 	policyJSONUmarshallerTests{
 		newDest: func() json.Unmarshaler { return &prmExactReference{} },
 		newValidObject: func() (interface{}, error) {
-			return NewPRMExactReference("library/buxybox:latest")
+			return NewPRMExactReference("library/busybox:latest")
 		},
 		otherJSONParser: func(validJSON []byte) (interface{}, error) {
 			return newPolicyReferenceMatchFromJSON(validJSON)
@@ -1157,7 +1157,7 @@ func TestPRMExactRepositoryUnmarshalJSON(t *testing.T) {
 	policyJSONUmarshallerTests{
 		newDest: func() json.Unmarshaler { return &prmExactRepository{} },
 		newValidObject: func() (interface{}, error) {
-			return NewPRMExactRepository("library/buxybox:latest")
+			return NewPRMExactRepository("library/busybox:latest")
 		},
 		otherJSONParser: func(validJSON []byte) (interface{}, error) {
 			return newPolicyReferenceMatchFromJSON(validJSON)
