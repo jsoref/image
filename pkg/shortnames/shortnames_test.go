@@ -216,7 +216,7 @@ func TestResolveWithDropInConfigs(t *testing.T) {
 	tests := []struct {
 		name, value string
 	}{
-		{"docker", "docker.io/library/config1:latest"}, // overriden by config1
+		{"docker", "docker.io/library/config1:latest"}, // overridden by config1
 		{"docker:tag", "docker.io/library/config1:tag"},
 		{
 			"docker@sha256:d366a4665ab44f0648d7a00ae3fae139d55e32f9712c67accd604bb55df9d05a",
