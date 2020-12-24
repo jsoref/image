@@ -582,7 +582,7 @@ type SystemContext struct {
 
 	// === OCI.Transport overrides ===
 	// If not "", a directory containing a CA certificate (ending with ".crt"),
-	// a client certificate (ending with ".cert") and a client ceritificate key
+	// a client certificate (ending with ".cert") and a client certificate key
 	// (ending with ".key") used when downloading OCI image layers.
 	OCICertPath string
 	// Allow downloading OCI image layers over HTTP, or HTTPS with failed TLS verification. Note that this does not affect other TLS connections.
@@ -594,7 +594,7 @@ type SystemContext struct {
 
 	// === docker.Transport overrides ===
 	// If not "", a directory containing a CA certificate (ending with ".crt"),
-	// a client certificate (ending with ".cert") and a client ceritificate key
+	// a client certificate (ending with ".cert") and a client certificate key
 	// (ending with ".key") used when talking to a Docker Registry.
 	DockerCertPath string
 	// If not "", overrides the system’s default path for a directory containing host[:port] subdirectories with the same structure as DockerCertPath above.
