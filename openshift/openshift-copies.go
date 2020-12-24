@@ -1055,11 +1055,11 @@ func (c *restConfig) HasCertAuth() bool {
 // Config holds the information needed to build connect to remote kubernetes clusters as a given user
 // IMPORTANT if you add fields to this struct, please update IsConfigEmpty()
 type clientcmdConfig struct {
-	// Clusters is a map of referencable names to cluster configs
+	// Clusters is a map of referenceable names to cluster configs
 	Clusters clustersMap `json:"clusters"`
-	// AuthInfos is a map of referencable names to user configs
+	// AuthInfos is a map of referenceable names to user configs
 	AuthInfos authInfosMap `json:"users"`
-	// Contexts is a map of referencable names to context configs
+	// Contexts is a map of referenceable names to context configs
 	Contexts contextsMap `json:"contexts"`
 	// CurrentContext is the name of the context that you would like to use by default
 	CurrentContext string `json:"current-context"`
