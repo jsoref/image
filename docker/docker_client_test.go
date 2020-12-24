@@ -110,7 +110,7 @@ func TestNewBearerTokenFromInvalidJsonBlob(t *testing.T) {
 	tokenBlob := []byte("IAmNotJson")
 	_, err := newBearerTokenFromJSONBlob(tokenBlob)
 	if err == nil {
-		t.Fatalf("unexpected an error unmarshalling JSON")
+		t.Fatalf("unexpected an error unmarshaling JSON")
 	}
 }
 
