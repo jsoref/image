@@ -96,7 +96,7 @@ func testGenericRecordKnownLocations(t *testing.T, cache blobinfocache.BlobInfoC
 	}
 }
 
-// candidate is a shorthand for types.BICReplacementCandiddate
+// candidate is a shorthand for types.BICReplacementCandidate
 type candidate struct {
 	d  digest.Digest
 	cn string
