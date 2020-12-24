@@ -177,7 +177,7 @@ func (config *V2RegistriesConf) Nonempty() bool {
 
 // parsedConfig is the result of parsing, and possibly merging, configuration files;
 // it is the boundary between the process of reading+ingesting the files, and
-// later interpreting the configuraiton based on caller’s requests.
+// later interpreting the configuration based on caller’s requests.
 type parsedConfig struct {
 	// NOTE: Update also parsedConfig.updateWithConfigurationFrom!
 
