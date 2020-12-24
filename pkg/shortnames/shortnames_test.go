@@ -143,7 +143,7 @@ func TestResolve(t *testing.T) {
 
 	// Non-existent should return an error as no search registries are
 	// configured in the config.
-	resolved, err := Resolve(sys, "dontexist")
+	resolved, err := Resolve(sys, "doesnotexist")
 	require.Error(t, err)
 	require.Nil(t, resolved)
 
@@ -281,11 +281,11 @@ func TestResolveWithDropInConfigs(t *testing.T) {
 	}
 
 	// config1 sets one search registry.
-	resolved, err := Resolve(sys, "dontexist")
+	resolved, err := Resolve(sys, "doesnotexist")
 	require.NoError(t, err)
 	require.NotNil(t, resolved)
 	require.Len(t, resolved.PullCandidates, 1)
-	assert.Equal(t, "example-overwrite.com/dontexist:latest", resolved.PullCandidates[0].Value.String())
+	assert.Equal(t, "example-overwrite.com/doesnotexist:latest", resolved.PullCandidates[0].Value.String())
 
 	// An empty name is not valid.
 	resolved, err = Resolve(sys, "")
@@ -353,25 +353,25 @@ func TestResolveWithVaryingShortNameModes(t *testing.T) {
 		{"testdata/one-reg.conf", types.ShortNameModePermissive, "repo/image", false, 1},
 		{"testdata/two-reg.conf", types.ShortNameModePermissive, "repo/image", false, 1},
 		// Permisive + no match -> search (no tty)
-		{"testdata/no-reg.conf", types.ShortNameModePermissive, "donotexist", true, 0},
-		{"testdata/one-reg.conf", types.ShortNameModePermissive, "donotexist", false, 1},
-		{"testdata/two-reg.conf", types.ShortNameModePermissive, "donotexist", false, 2},
+		{"testdata/no-reg.conf", types.ShortNameModePermissive, "doesnotexist", true, 0},
+		{"testdata/one-reg.conf", types.ShortNameModePermissive, "doesnotexist", false, 1},
+		{"testdata/two-reg.conf", types.ShortNameModePermissive, "doesnotexist", false, 2},
 		// Disabled + match -> return alias
 		{"testdata/no-reg.conf", types.ShortNameModeDisabled, "repo/image", false, 1},
 		{"testdata/one-reg.conf", types.ShortNameModeDisabled, "repo/image", false, 1},
 		{"testdata/two-reg.conf", types.ShortNameModeDisabled, "repo/image", false, 1},
 		// Disabled + no match -> search
-		{"testdata/no-reg.conf", types.ShortNameModeDisabled, "donotexist", true, 0},
-		{"testdata/one-reg.conf", types.ShortNameModeDisabled, "donotexist", false, 1},
-		{"testdata/two-reg.conf", types.ShortNameModeDisabled, "donotexist", false, 2},
+		{"testdata/no-reg.conf", types.ShortNameModeDisabled, "doesnotexist", true, 0},
+		{"testdata/one-reg.conf", types.ShortNameModeDisabled, "doesnotexist", false, 1},
+		{"testdata/two-reg.conf", types.ShortNameModeDisabled, "doesnotexist", false, 2},
 		// Enforcing + match -> return alias
 		{"testdata/no-reg.conf", types.ShortNameModeEnforcing, "repo/image", false, 1},
 		{"testdata/one-reg.conf", types.ShortNameModeEnforcing, "repo/image", false, 1},
 		{"testdata/two-reg.conf", types.ShortNameModeEnforcing, "repo/image", false, 1},
 		// Enforcing + no match -> error if search regs > 1 and no tty
-		{"testdata/no-reg.conf", types.ShortNameModeEnforcing, "donotexist", true, 0},
-		{"testdata/one-reg.conf", types.ShortNameModeEnforcing, "donotexist", false, 1},
-		{"testdata/two-reg.conf", types.ShortNameModeEnforcing, "donotexist", true, 0},
+		{"testdata/no-reg.conf", types.ShortNameModeEnforcing, "doesnotexist", true, 0},
+		{"testdata/one-reg.conf", types.ShortNameModeEnforcing, "doesnotexist", false, 1},
+		{"testdata/two-reg.conf", types.ShortNameModeEnforcing, "doesnotexist", true, 0},
 	}
 
 	for _, test := range tests {
