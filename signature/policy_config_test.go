@@ -740,7 +740,7 @@ func TestNewPRSignedByKeyData(t *testing.T) {
 	// Failure cases tested in TestNewPRSignedBy.
 }
 
-// Return the result of modifying vaoidJSON with fn and unmarshalingit into *pr
+// Return the result of modifying vaoidJSON with fn and unmarshaling it into *pr
 func tryUnmarshalModifiedSignedBy(t *testing.T, pr *prSignedBy, validJSON []byte, modifyFn func(mSI)) error {
 	var tmp mSI
 	err := json.Unmarshal(validJSON, &tmp)
