@@ -450,7 +450,7 @@ func newConfigWrapperWithHomeDir(ctx *types.SystemContext, homeDir string) confi
 	return wrapper
 }
 
-// ConfigurationSourceDescription returns a string containres paths of registries.conf and registries.conf.d
+// ConfigurationSourceDescription returns a string containers paths of registries.conf and registries.conf.d
 func ConfigurationSourceDescription(ctx *types.SystemContext) string {
 	wrapper := newConfigWrapper(ctx)
 	configSources := []string{wrapper.configPath}
