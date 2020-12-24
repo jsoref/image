@@ -57,7 +57,7 @@ func TestCreateSignature(t *testing.T) {
 	dockerRef, err := docker.ParseReference("//busybox")
 	require.NoError(t, err)
 	dockerDest, err := dockerRef.NewImageDestination(context.Background(),
-		&types.SystemContext{RegistriesDirPath: "/this/doesnt/exist", DockerPerHostCertDirPath: "/this/doesnt/exist"})
+		&types.SystemContext{RegistriesDirPath: "/this/does/not/exist", DockerPerHostCertDirPath: "/this/does/not/exist"})
 	require.NoError(t, err)
 	defer dockerDest.Close()
 	c = &copier{
