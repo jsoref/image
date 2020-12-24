@@ -179,7 +179,7 @@ type BICReplacementCandidate struct {
 // It records two kinds of data:
 // - Sets of corresponding digest vs. uncompressed digest ("DiffID") pairs:
 //   One of the two digests is known to be uncompressed, and a single uncompressed digest may correspond to more than one compressed digest.
-//   This allows matching compressed layer blobs to existing local uncompressed layers (to avoid unnecessary download and decompresssion),
+//   This allows matching compressed layer blobs to existing local uncompressed layers (to avoid unnecessary download and decompression),
 //   or uncompressed layer blobs to existing remote compressed layers (to avoid unnecessary compression and upload)/
 //
 //   It is allowed to record an (uncompressed digest, the same uncompressed digest) correspondence, to express that the digest is known
